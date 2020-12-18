@@ -1,0 +1,11 @@
+Form{
+
+    width: 35%;
+}
+
+.formCont{
+    display: flex;
+    justify-content: centre;
+    align-self: centre;
+    
+}
