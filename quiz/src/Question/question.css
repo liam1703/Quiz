@@ -1,0 +1,12 @@
+.qCard{
+    width: 60%;
+    border: black 2px solid;
+    margin-top:30px ;
+    margin-bottom: 100px;
+}
+
+.quizExit{
+    width: 20%;
+    margin-top: 70px;
+    
+}

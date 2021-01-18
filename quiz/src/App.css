@@ -1,6 +1,13 @@
 * {
-    background: #5cdb95;
+    /* background: #5cdb95; */
     font-family: 'Ubuntu', sans-serif;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital@1&display=swap');
+
+/* .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height:100vh;   
+} */

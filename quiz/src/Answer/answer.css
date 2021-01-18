@@ -1,0 +1,14 @@
+.ACard{
+    width: 60%;
+    border: black 2px solid;
+    margin-bottom: 15px;
+
+    
+}
+
+.ACard :hover{
+    color: white;
+    background-color:black ;
+    border: white 2px solid;
+
+}
