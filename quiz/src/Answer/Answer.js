@@ -2,12 +2,12 @@ import Card from 'react-bootstrap/Card'
 import './answer.css'
 
 
-function Answer() {
+function Answer({ans, qCheck}) {
     return (
 
         <div>
             <Card className="center ACard">
-                <Card.Body>Liverpool?</Card.Body>
+                <Card.Body onClick={() => qCheck()}>{ans}</Card.Body>
             </Card>
       </div>
 
