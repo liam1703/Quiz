@@ -13,7 +13,7 @@ class App extends React.Component{
     super();
     this.state = {
       route: "signIn",
-      qNum: 0
+     
     }
   }
 
@@ -21,9 +21,7 @@ class App extends React.Component{
        this.setState({route: area})
      }
 
-     qCheck = () => {
-       this.setState({qNum: this.state.qNum += 1})
-     }
+
 
   
   render(){
@@ -35,7 +33,7 @@ class App extends React.Component{
     {
       page = <SignForm className="center" onSignIn={this.onSignIn}/>
     } else if(route ==='mainquiz') {
-      page = <Question className="center" onSignIn={this.onSignIn} quizBody={quizBody} qNum={this.state.qNum} qCheck={this.qCheck}/> 
+      page = <Question className="center" onSignIn={this.onSignIn} quizBody={quizBody} /> 
     } else if(route === 'register'){
       page = <Register className="center" onSignIn={this.onSignIn}/>
     }

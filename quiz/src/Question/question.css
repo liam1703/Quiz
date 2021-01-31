@@ -1,12 +1,19 @@
 .qCard{
     width: 60%;
-    border: black 2px solid;
+    border: lightblue 2px solid;
     margin-top:30px ;
-    margin-bottom: 100px;
+    margin-bottom: 60px;
 }
 
 .quizExit{
     width: 20%;
-    margin-top: 70px;
+    margin-top: 50px;
     
+}
+
+.sCard{
+    width: 30%;
+    border: lightblue 2px solid;
+    margin-top:5px ;
+    margin-bottom: 20px;
 }
