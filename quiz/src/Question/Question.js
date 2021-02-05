@@ -15,13 +15,16 @@ class Question extends React.Component{
       }}
     
     qCheck = (ans) => {
-        if(ans == quizBody[this.state.qNum].A){
+
+        console.log(ans)
+        if(ans == quizBody[this.state.qNum].Answer){
             this.setState({score: this.state.score += 1 })
         }
         console.log(this.state.qNum)
         this.setState({qNum: this.state.qNum += 1})
-        console.log(this.state.qNum)
-        console.log(quizBody.length)
+        if(this.state.qNum >= quizBody.length){
+            this.setState({qNum: this.state.qNum = 0})
+        }
     }
 
     render(){
@@ -31,10 +34,12 @@ class Question extends React.Component{
         let B = quizBody[qNum].B;
         let C = quizBody[qNum].C;
         let D = quizBody[qNum].D;
+        let bestScore = 3;
         return(
         <div>
             <Card className="sCard center">
-                <Card.Body className="center">Score: {this.state.score}</Card.Body>
+                <Card.Body className="center">
+                <span className="bestever">Your Best : {bestScore}</span> Score: {this.state.score}</Card.Body>
             </Card>
             <Card className="qCard center">
                 <Card.Body className="center">{quizBody[qNum].Q}</Card.Body>

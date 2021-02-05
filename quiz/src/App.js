@@ -13,12 +13,17 @@ class App extends React.Component{
     super();
     this.state = {
       route: "signIn",
+      name: "",
      
     }
   }
 
      onSignIn = (area) => {
        this.setState({route: area})
+     }
+
+     onLogin = (user) => {
+       this.setState({name: user})
      }
 
 
@@ -31,7 +36,7 @@ class App extends React.Component{
     let page;
     if(route ==='signIn')
     {
-      page = <SignForm className="center" onSignIn={this.onSignIn}/>
+      page = <SignForm className="center" onSignIn={this.onSignIn} onLogin={this.onLogin}/>
     } else if(route ==='mainquiz') {
       page = <Question className="center" onSignIn={this.onSignIn} quizBody={quizBody} /> 
     } else if(route === 'register'){
@@ -41,6 +46,7 @@ class App extends React.Component{
     return (
       <div className="App">
           <NavBar className="center"/>
+          <h3 className="greet">Hello {this.state.name}</h3>
           {page} 
           
             

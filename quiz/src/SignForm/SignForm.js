@@ -4,7 +4,7 @@ import "./SignForm.css";
 
 
 
-function SignForm({onSignIn}) {
+function SignForm({onSignIn, onLogin}) {
     return (
         <div className="Login">
             <Form>
@@ -21,7 +21,9 @@ function SignForm({onSignIn}) {
                     <Form.Control type="password"/>
                 </Form.Group>
 
-                <Button block size="lg" type="submit" onClick={() => onSignIn("mainquiz")}>Login</Button>
+                <Button block size="lg" type="submit" 
+                onClick={() => {onSignIn("mainquiz"); onLogin("Liam");}
+                }>Login</Button>
 
                 
             </Form>

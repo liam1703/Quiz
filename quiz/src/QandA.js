@@ -27,7 +27,7 @@ export const quizBody = [
         Answer: "Bucharest"
 
     },
-    ,
+    
     {
         Q: "What year was the FA cup final?",
         A: "1888",

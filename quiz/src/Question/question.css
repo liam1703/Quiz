@@ -2,7 +2,7 @@
     width: 60%;
     border: lightblue 2px solid;
     margin-top:30px ;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
 }
 
 .quizExit{
@@ -16,4 +16,9 @@
     border: lightblue 2px solid;
     margin-top:5px ;
     margin-bottom: 20px;
+}
+
+.bestever{
+    margin-left:0px ;
+    margin-right: 70px;
 }
