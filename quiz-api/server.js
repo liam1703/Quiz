@@ -1,9 +1,13 @@
 const express = require('express')
 const bodyParser = require("body-parser")
 const bcrypt = require('bcrypt-nodejs');
+const cors = require('cors');
+
+
 
 const app = express()
-app.use(bodyParser.json())
+app.use(bodyParser.json());
+app.use(cors())
 let idCounter = 124;
 
 
@@ -27,7 +31,7 @@ const database = {
 
 
 app.get("/", (req , res)=>{
-    res.send("this is working")
+    res.send(database.users)
 })
 
 
@@ -91,6 +95,6 @@ app.get('/profile/:id', (req, res)=>{
 
 
 
-app.listen(3000, ()=>{
+app.listen(3001, ()=>{
     console.log("Hello World!!")
 })
