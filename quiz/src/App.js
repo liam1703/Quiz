@@ -14,8 +14,24 @@ class App extends React.Component{
     this.state = {
       route: "signIn",
       name: "",
+      user: {
+        id: "",
+        name: "",
+        email: "",
+        score: 0
+      }
      
     }
+  }
+
+
+  loadUser = (data) => {
+    this.setState({user: {
+      id: data.id,
+      name: data.name,
+      email: data.email,
+      score: data.score
+    }})
   }
 
   componentDidMount(){
@@ -27,6 +43,7 @@ class App extends React.Component{
 
      onSignIn = (area) => {
        this.setState({route: area})
+       console.log(this.state.route)
      }
 
      onLogin = (user) => {
@@ -43,11 +60,11 @@ class App extends React.Component{
     let page;
     if(route ==='signIn')
     {
-      page = <SignForm className="center" onSignIn={this.onSignIn} onLogin={this.onLogin}/>
+      page = <SignForm className="center" loadUser={this.loadUser} onSignIn={this.onSignIn} onLogin={this.onLogin}/>
     } else if(route ==='mainquiz') {
       page = <Question className="center" onSignIn={this.onSignIn} quizBody={quizBody} /> 
     } else if(route === 'register'){
-      page = <Register className="center" onSignIn={this.onSignIn}/>
+      page = <Register className="center" loadUser={this.loadUser} onSignIn={this.onSignIn}/>
     }
 
     return (

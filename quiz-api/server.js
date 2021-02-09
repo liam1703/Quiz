@@ -43,7 +43,7 @@ app.post("/signin", (req, res)=>{
         // res = false
     });
     if(req.body.email === database.users[0].email && req.body.password === database.users[0].password){
-        res.json("email and password match a current user!")
+        res.json(database.users[0]);
     } else {
         res.json("email and pass doesnt match a current user")
     }
@@ -58,7 +58,7 @@ app.post("/register", (req, res) =>{
     });
     idCounter += 1
     database.users.push({
-        id : idCounter.toString(),
+        id : 567,
         name: "Dave",
         email: "dave@gmail.com",
         password: "dave123",

@@ -34,8 +34,8 @@ class SignForm extends React.Component {
         })
         // .then(response => response.json())
         // .then(data => {
-        //     if(data === "success" ){
-        //         this.props.onLogin("Liam");
+        //     if(user.id){
+        //         this.props.loadUser(user);
         //         this.props.onSignIn("mainquiz");
         //     }
         // })
