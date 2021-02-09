@@ -7,7 +7,7 @@ function Answer({ans, qCheck}) {
 
         <div>
             <Card className="center ACard">
-                <Card.Body onClick={() => qCheck()}>{ans}</Card.Body>
+                <Card.Body onClick={() => qCheck(ans)}>{ans}</Card.Body>
             </Card>
       </div>
 
