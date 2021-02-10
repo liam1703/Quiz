@@ -2,8 +2,25 @@ const express = require('express')
 const bodyParser = require("body-parser")
 const bcrypt = require('bcrypt-nodejs');
 const cors = require('cors');
+const knex = require('knex');
 
 
+
+
+const db = knex({
+    client: 'pg',
+    connection: {
+      host : '127.0.0.1',
+      user : 'liambradbury',
+      password : '',
+      database : 'quizzer'
+    }
+  });
+// request returns a promise
+db.select('*').from('users').then(data => {
+    console.log(data);
+
+});
 
 const app = express()
 app.use(bodyParser.json());
@@ -53,19 +70,7 @@ app.post("/signin", (req, res)=>{
 
 app.post("/register", (req, res) =>{
     const {email, name, password} = req.body
-    bcrypt.hash(password, null, null, function(err, hash) {
-        // Store hash in your password DB.
-    });
-    idCounter += 1
-    database.users.push({
-        id : 567,
-        name: "Dave",
-        email: "dave@gmail.com",
-        password: "dave123",
-        score: 0
-        
-
-    })
+    db.
     res.json(database.users[database.users.length-1]);
 })
 
