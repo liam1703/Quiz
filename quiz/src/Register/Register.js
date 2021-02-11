@@ -83,10 +83,7 @@ class Register extends React.Component {
                         />
                     </Form.Group>
 
-                    <Form.Group size="lg" controlId="password">
-                        <Form.Label>Confirm Password</Form.Label>
-                        <Form.Control type="password"/>
-                    </Form.Group>
+
 
                     <Button block size="lg"  onClick={this.onSubmitSignIn}>Signup</Button>
 

@@ -32,16 +32,16 @@ class SignForm extends React.Component {
 
             })
         })
-        // .then(response => response.json())
-        // .then(data => {
-        //     if(user.id){
-        //         this.props.loadUser(user);
-        //         this.props.onSignIn("mainquiz");
-        //     }
-        // })
-        console.log(this.state)
-        this.props.onLogin("Liam");
-        this.props.onSignIn("mainquiz");
+            .then(response => response.json())
+            .then(user => {
+                if(user.id){
+                    this.props.loadUser(user);
+                    this.props.onSignIn("mainquiz");
+                }
+            })
+        // console.log(this.state)
+        // this.props.onLogin("Liam");
+        // this.props.onSignIn("mainquiz");
     }
 
 

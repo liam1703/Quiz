@@ -34,12 +34,12 @@ class App extends React.Component{
     }})
   }
 
-  componentDidMount(){
-    fetch('http://localhost:3001')
-      .then(response => response.json())
-      //console.log is shorthand for showing data
-      .then(console.log)
-  }
+  // componentDidMount(){
+  //   fetch('http://localhost:3001')
+  //     .then(response => response.json())
+  //     //console.log is shorthand for showing data
+  //     .then(console.log)
+  // }
 
      onSignIn = (area) => {
        this.setState({route: area})
