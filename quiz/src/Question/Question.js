@@ -23,7 +23,9 @@ class Question extends React.Component{
         console.log(this.state.qNum)
         this.setState({qNum: this.state.qNum += 1})
         if(this.state.qNum >= quizBody.length){
-            this.setState({qNum: this.state.qNum = 0})
+            this.props.onSignIn("final");
+            
+            // this.setState({qNum: this.state.qNum = 0})
         }
     }
 
@@ -41,8 +43,8 @@ class Question extends React.Component{
                 <Card.Body className="center">
                 <span className="bestever">Your Best : {bestScore}</span> Score: {this.state.score}</Card.Body>
             </Card>
-            <Card className="qCard center">
-                <Card.Body className="center">{quizBody[qNum].Q}</Card.Body>
+            <Card className="qCard center questions">
+                <Card.Body className="center txt">{quizBody[qNum].Q} </Card.Body>
             </Card>
             <Answer ans={A} qCheck={this.qCheck}/>
             <Answer ans={B} qCheck={this.qCheck}/>

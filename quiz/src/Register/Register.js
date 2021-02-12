@@ -61,7 +61,7 @@ class Register extends React.Component {
                     <Button block size="lg" variant="info" className="regButton" onClick={() => onSignIn("signIn")}> {/*type="submit"*/} Already signed up click here!</Button>
 
                     <Form.Group size="lg" controlId="name">
-                        <Form.Label>Name</Form.Label>
+                        <Form.Label className="email-label">Name</Form.Label>
                         <Form.Control 
                         autoFocus type="text"
                             onChange={this.onNameChange}
@@ -69,7 +69,7 @@ class Register extends React.Component {
                     </Form.Group>
 
                     <Form.Group size="lg" controlId="email">
-                        <Form.Label>Email</Form.Label>
+                        <Form.Label className="email-label">Email</Form.Label>
                         <Form.Control autoFocus type="email"
                             onChange={this.onEmailChange}
                         />
@@ -77,7 +77,7 @@ class Register extends React.Component {
 
 
                     <Form.Group size="lg" controlId="password">
-                        <Form.Label>Password</Form.Label>
+                        <Form.Label className="email-label">Password</Form.Label>
                         <Form.Control type="password"
                             onChange={this.onPasswordChange}
                         />
