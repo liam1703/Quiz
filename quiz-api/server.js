@@ -88,6 +88,24 @@ app.post("/register", (req, res) =>{
     
 })
 
+
+
+app.put('/score', (req, res) => {
+    const { id, score } = req.body;
+    db('users').where('id', '=', id)
+    .update({
+        score: score,
+        
+      })
+    .returning('score')
+    .then(score => {
+      res.json(score[0]);
+    })
+    .catch(err => res.status(400).json('unable to get entries'))
+  })
+
+
+
 app.get('/profile/:id', (req, res)=>{
     const { id } = req.params;
     

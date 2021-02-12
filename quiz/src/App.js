@@ -64,7 +64,7 @@ class App extends React.Component{
     {
       page = <SignForm className="center" loadUser={this.loadUser} onSignIn={this.onSignIn} onLogin={this.onLogin}/>
     } else if(route ==='mainquiz') {
-      page = <Question className="center" onSignIn={this.onSignIn} quizBody={quizBody} /> 
+      page = <Question className="center" bestScore={this.state.user.score} onSignIn={this.onSignIn} quizBody={quizBody} /> 
       heading = <h3 className="greet">Hello, {this.state.user.name}</h3>
     } else if(route === 'register'){
       page = <Register className="center" loadUser={this.loadUser} onSignIn={this.onSignIn}/>
