@@ -36,4 +36,65 @@ export const quizBody = [
         D: "1884",
         Answer: "1872"
 
-    }]
+    },
+
+    {
+        Q: "What is the highest mountain in Britain?",
+        A: "Ben Nevis",
+        B: "Snowden",
+        C: "Scafell Pike",
+        D: "Skiddaw",
+        Answer: "Ben Nevis"
+
+    },
+    {
+        Q: "What is the hottest continent on Earth?",
+        A: "Europe",
+        B: "South America",
+        C: "Asia",
+        D: "Africa",
+        Answer: ""
+
+    },      
+    {
+        Q: "What is the longest river on Earth?",
+        A: "Amazon",
+        B: "Yangtze",
+        C: "Nile",
+        D: "The Congo River",
+        Answer: "Nile"
+
+    },
+    {
+        Q: "Who was Henry VIIIs last wife?",
+        A: "Catherine of Aragon",
+        B: "Jane Seymour",
+        C: "Catherine Parr",
+        D: "Anne of Cleves",
+        Answer: "Catherine Parr"
+
+    },
+
+    {
+        Q: "Which nationality was the polar explorer Roald Amundsen?",
+        A: "Danish",
+        B: "Norwegian",
+        C: "Swedish",
+        D: "Finish",
+        Answer: "Norwegian"
+
+    },
+
+    {
+        Q: "Who won the FIFA Women's World Cup in 2019?",
+        A: "France",
+        B: "USA",
+        C: "Japan",
+        D: "Germany",
+        Answer: "USA"
+
+    },
+]
+
+
+

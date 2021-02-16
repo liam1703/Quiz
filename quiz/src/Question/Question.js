@@ -13,6 +13,20 @@ class Question extends React.Component{
           score: 0
 
       }}
+
+    bestCheck = (currentScore) => {
+        if(currentScore > this.bestScore){
+            fetch('http://localhost:3000/image', {
+            method: 'put',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+              id: this.state.user.id,
+              score: this.state.score
+            })
+          })
+            .then(response => response.json())
+        }
+    }
     
     qCheck = (ans) => {
 
@@ -23,26 +37,28 @@ class Question extends React.Component{
         console.log(this.state.qNum)
         this.setState({qNum: this.state.qNum += 1})
         if(this.state.qNum >= quizBody.length){
-            this.setState({qNum: this.state.qNum = 0})
+            this.props.onSignIn("final");
+            
+            // this.setState({qNum: this.state.qNum = 0})
         }
     }
 
     render(){
-        const {onSignIn} = this.props
+        const {onSignIn, bestScore} = this.props
         const {qNum} = this.state
         let A = quizBody[qNum].A;
         let B = quizBody[qNum].B;
         let C = quizBody[qNum].C;
         let D = quizBody[qNum].D;
-        let bestScore = 3;
+        // let bestScore = 3;
         return(
         <div>
             <Card className="sCard center">
                 <Card.Body className="center">
                 <span className="bestever">Your Best : {bestScore}</span> Score: {this.state.score}</Card.Body>
             </Card>
-            <Card className="qCard center">
-                <Card.Body className="center">{quizBody[qNum].Q}</Card.Body>
+            <Card className="qCard center questions">
+                <Card.Body className="center txt">{quizBody[qNum].Q} </Card.Body>
             </Card>
             <Answer ans={A} qCheck={this.qCheck}/>
             <Answer ans={B} qCheck={this.qCheck}/>

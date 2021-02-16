@@ -1,5 +1,5 @@
 * {
-    /* background: #5cdb95; */
+    /* background-image: linear-gradient(to right ,#667eea , #764ba2); */
     font-family: 'Ubuntu', sans-serif;
 }
 
@@ -15,4 +15,7 @@
 
 .greet{
     text-align: center;
+    color: white;
+    font-weight: bold;
 }
+

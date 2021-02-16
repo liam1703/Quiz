@@ -6,6 +6,7 @@ import SignForm from './SignForm/SignForm.js';
 import Register from './Register/Register.js';
 import Question from './Question/Question';
 import Answer from './Answer/Answer';
+import Final from './Final/Final.js';
 import {quizBody} from './QandA';
 
 class App extends React.Component{
@@ -34,12 +35,12 @@ class App extends React.Component{
     }})
   }
 
-  componentDidMount(){
-    fetch('http://localhost:3001')
-      .then(response => response.json())
-      //console.log is shorthand for showing data
-      .then(console.log)
-  }
+  // componentDidMount(){
+  //   fetch('http://localhost:3001')
+  //     .then(response => response.json())
+  //     //console.log is shorthand for showing data,
+  //     .then(console.log)
+  // }
 
      onSignIn = (area) => {
        this.setState({route: area})
@@ -58,19 +59,24 @@ class App extends React.Component{
     
     const route = this.state.route;
     let page;
+    let heading;
     if(route ==='signIn')
     {
       page = <SignForm className="center" loadUser={this.loadUser} onSignIn={this.onSignIn} onLogin={this.onLogin}/>
     } else if(route ==='mainquiz') {
-      page = <Question className="center" onSignIn={this.onSignIn} quizBody={quizBody} /> 
+      page = <Question className="center" bestScore={this.state.user.score} onSignIn={this.onSignIn} quizBody={quizBody} /> 
+      heading = <h3 className="greet">Hello, {this.state.user.name}</h3>
     } else if(route === 'register'){
       page = <Register className="center" loadUser={this.loadUser} onSignIn={this.onSignIn}/>
+    } else if(route === 'final'){
+      page = <Final />
     }
 
     return (
       <div className="App">
           <NavBar className="center"/>
-          <h3 className="greet">Hello {this.state.name}</h3>
+          {heading}
+          
           {page} 
           
             
