@@ -1,0 +1,14 @@
+.final-screen{
+    text-align: center;
+    
+}
+
+.final-screen h1 {
+    color: white;
+    margin-top: 20vh;
+    font-size: 4rem;
+}
+.final-screen h2{
+    color: white;
+    font-size: 3rem;
+}
